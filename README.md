@@ -468,13 +468,218 @@ ob3.get_a();
 return 0;
 }
 ----------------------------------------------------------------------------------------------------
+FRIENDS FUNCTION CODE :-
 
+#include<iostream> using namespace std;
+
+class Distance
+
+{
+
+private:
+
+int meter;
+
+public:
+
+Distance() 
+{
+
+meter = 0;
+
+}
+
+friend int fun(Distance);
+ };
+
+int fun(Distance d) 
+{
+
+d.meter += 6;
+
+return d.meter;
+
+}
+
+int main()
+{
+
+Distance obj;
+
+int w = fun(obj);
+
+cout << "Distance:" <<
+
+W;
+
+return 0;
+
+}
 ----------------------------------------------------------------------------------------------------
+VIRTUAL FUNCTION CODE :-
 
+#include <iostream> using namespace std;
+
+class Base
+
+{
+
+public:
+
+virtual void Output()
+
+{
+
+cout << "Output Base class" << endl;
+
+}
+
+void Display()
+{ 
+cout << "Display Base class" << endl; 
+}
+
+};
+
+class Derived: public Base
+
+{
+
+public:
+
+void Output()
+
+{
+
+cout << "Output Derived class" << endl;
+
+}
+
+void Display()
+
+{
+
+cout << "Display Derived class" << endl;
+
+}
+
+};
+
+int main()
+
+{
+
+Base* bpointr;
+
+Derived dpointr;
+
+bpointr = &dpointr;
+
+// virtual function binding
+
+bpointr->Output();
+
+// Non-virtual function binding
+
+bpointr->Display();
+}
+
+Output
 ----------------------------------------------------------------------------------------------------
+POINTER CODE :-
 
+#include <iostream> using namespace std;
+
+int main() (
+
+int number = 42;
+
+double pi = 3.14159;
+
+char letter = 'A';
+
+// Declare and initialize pointers
+
+int* intPtr = &number;
+
+double* doublePtr = &pi;
+
+char* charPtr = &letter;
+
+// Display the values through pointers
+
+cout << "Value of number using intPtr: " << *intPtr << endl;
+
+cout << "Value of pi using doublePtr: "<< *doublePtr <<< endl;
+
+cout << "Value of letter using charPtr: " <<<charPtr << endl;
+
+// Modify values through pointers
+
+*intPtr = 10;
+
+*doublePtr = 2.71828;
+
+*charPtr = 'B';
+
+// Display the modified values
+
+cout << "Modified value of number:"<< number << endl;
+
+cout << "Modified value of pi: " << pi << endl;
+
+cout << "Modified value of letter: " <<<<< letter <<<< endl;
+
+return 0;
+}
 ----------------------------------------------------------------------------------------------------
+EXCEPTION HANDLING 
+CODE :- 
 
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+double numerator, denominator, divide;
+
+cout << "Enter numerator: ";
+
+cin >> numerator;
+
+cout << "Enter denominator: ";
+
+cin >> denominator;
+
+try{
+
+//throws an exception if denominator is 0
+
+if (denominator == 0)
+{
+
+throw 0;
+
+}
+
+//Not executed if denominator is 0
+
+divide = numerator / denominator;
+
+cout << numerator << " / " << denominator << " = " << divide <<< endl;
+}
+catch(int num_exception)
+
+{
+
+cout << "Error: Cannot divide by " << num_exception << endl;
+
+}
+
+return 0;
+}
 ----------------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------------
